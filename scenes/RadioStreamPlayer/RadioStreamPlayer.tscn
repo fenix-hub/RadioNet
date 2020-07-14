@@ -1,0 +1,333 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://fonts/Space kids.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://buttons/player-2488095_960_720.png" type="Texture" id=2]
+[ext_resource path="res://buttons/pressed.png" type="Texture" id=3]
+[ext_resource path="res://scenes/RadioStreamPlayer/RadioStreamPlayer.cs" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0.141176, 0.160784, 0.192157, 1 )
+border_blend = true
+shadow_color = Color( 0, 0, 0, 0.266667 )
+shadow_size = 8
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 80, 120, 130 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 80, 120, 130 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 840, 80, 120, 130 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 840, 84, 120, 130 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 460, 84, 80, 129 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 460, 84, 80, 129 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 635, 84, 87, 130 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 635, 84, 87, 130 )
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[node name="RadioStreamPlayer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0901961, 0.321569, 0.690196, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.146667
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0901961, 0.321569, 0.690196, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = "Internet Radio Stream Player"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchor_top = 0.24
+anchor_right = 1.0
+anchor_bottom = 0.368333
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="HBoxContainer2"]
+margin_left = 135.0
+margin_top = 4.0
+margin_right = 229.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 5 )
+text = "previous
+station"
+align = 2
+
+[node name="Previous" type="TextureButton" parent="HBoxContainer2"]
+margin_left = 249.0
+margin_right = 309.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 60, 0 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer2"]
+margin_left = 329.0
+margin_right = 349.0
+margin_bottom = 76.0
+custom_styles/separator = SubResource( 8 )
+custom_constants/separation = 20
+
+[node name="MenuButton" type="MenuButton" parent="HBoxContainer2"]
+margin_left = 369.0
+margin_right = 669.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 300, 0 )
+text = "Select a station"
+flat = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer2"]
+margin_left = 689.0
+margin_right = 709.0
+margin_bottom = 76.0
+custom_styles/separator = SubResource( 8 )
+custom_constants/separation = 20
+
+[node name="Next" type="TextureButton" parent="HBoxContainer2"]
+margin_left = 729.0
+margin_right = 789.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 60, 0 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+margin_left = 809.0
+margin_top = 4.0
+margin_right = 889.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 5 )
+text = "next
+station"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 0.421667
+anchor_right = 0.999023
+anchor_bottom = 0.701667
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 438.0
+margin_right = 508.0
+margin_bottom = 168.0
+custom_constants/separation = 3
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_right = 70.0
+margin_bottom = 37.0
+text = "play"
+align = 1
+
+[node name="Play" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 70.0
+margin_bottom = 168.0
+rect_min_size = Vector2( 70, 0 )
+size_flags_vertical = 3
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 512.0
+margin_right = 584.0
+margin_bottom = 168.0
+custom_constants/separation = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
+margin_right = 72.0
+margin_bottom = 37.0
+text = "pause"
+align = 1
+
+[node name="Stop" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 40.0
+margin_right = 72.0
+margin_bottom = 168.0
+rect_min_size = Vector2( 70, 0 )
+size_flags_vertical = 3
+texture_normal = SubResource( 13 )
+texture_pressed = SubResource( 14 )
+expand = true
+stretch_mode = 5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+anchor_left = 0.125
+anchor_top = 0.746667
+anchor_right = 0.875
+anchor_bottom = 0.853333
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="HBoxContainer3"]
+margin_top = 13.0
+margin_right = 93.0
+margin_bottom = 50.0
+text = "volume"
+
+[node name="VolumeBar" type="HSlider" parent="HBoxContainer3"]
+margin_left = 113.0
+margin_right = 703.0
+margin_bottom = 63.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 50.0
+tick_count = 10
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Value" type="Label" parent="HBoxContainer3"]
+margin_left = 723.0
+margin_top = 13.0
+margin_right = 768.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 45, 0 )
+text = "50"
+align = 1
+
+[node name="AddStation" type="ToolButton" parent="."]
+anchor_left = 0.34375
+anchor_top = 0.906667
+anchor_right = 0.65625
+anchor_bottom = 1.0
+text = "Add a new station"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="NewStation" type="ConfirmationDialog" parent="."]
+anchor_left = 0.21875
+anchor_top = 0.2
+anchor_right = 0.78125
+anchor_bottom = 0.8
+window_title = "Add a new station"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewStation"]
+anchor_left = 0.0694444
+anchor_right = 0.930556
+anchor_bottom = 0.844444
+margin_left = -32.0
+margin_top = 8.0
+margin_right = 31.9998
+margin_bottom = -2.99982
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="NewStation/VBoxContainer"]
+margin_top = 47.0
+margin_right = 496.0
+margin_bottom = 84.0
+text = "Station name"
+
+[node name="LineEdit" type="LineEdit" parent="NewStation/VBoxContainer"]
+margin_top = 88.0
+margin_right = 496.0
+margin_bottom = 135.0
+
+[node name="HSeparator" type="HSeparator" parent="NewStation/VBoxContainer"]
+margin_top = 139.0
+margin_right = 496.0
+margin_bottom = 164.0
+custom_styles/separator = SubResource( 15 )
+custom_constants/separation = 25
+
+[node name="Label2" type="Label" parent="NewStation/VBoxContainer"]
+margin_top = 168.0
+margin_right = 496.0
+margin_bottom = 205.0
+text = "Station URL"
+
+[node name="LineEdit2" type="LineEdit" parent="NewStation/VBoxContainer"]
+margin_top = 209.0
+margin_right = 496.0
+margin_bottom = 256.0
